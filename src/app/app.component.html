@@ -1,0 +1,14 @@
+<ul>
+  <li *ngFor="let item of items">
+    <span>{{ item | json }}</span>
+    <button (click)="deleteItem(item.id)" style="color: red; background-color: rebeccapurple"> DELEte </button>
+    <button (click)="updateField(item)" style="color: red; background-color: rebeccapurple"> Update </button>
+    <!--<pre>{{ // ite}}</pre>-->
+  </li>
+</ul>
+<button (click)="addItem()">Add a item!</button>
+
+<div >
+  <label>Search</label>
+  <input type="text" name="keysearch" [(ngModel)]="keySearch" (ngModelChange)="searchItems($event)">
+</div>
